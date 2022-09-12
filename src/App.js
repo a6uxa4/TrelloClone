@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from 'styled-components'
+import Menu from './Components/Menu/Menu'
+import React, { useState } from 'react'
+import Form from './Components/Form/Form'
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [wentСame, setWentСame] = useState(true)
+	return (
+		<Glavnyi>
+			<Menu wentСame={wentСame} setWentСame={setWentСame} />
+			{wentСame && <Form setWentСame={setWentСame} />}
+		</Glavnyi>
+	)
 }
 
-export default App;
+const Glavnyi = styled.div`
+	height: 753px;
+	background-color: #eeeee4;
+`
+
+export default App
+
+
